@@ -1,5 +1,23 @@
 require 'pry'
 
+# some sort of data => other hashes => basketball stats, game hash
+
+# ruby is very nice to you
+
+# "Alan Anderson" <= the name of a player
+#
+# a single player
+# {
+#   player_name: "Alan Anderson",
+#   number: 0,
+#   shoe: 16,
+#   points: 22,
+#   rebounds: 12,
+#   assists: 12,
+#   steals: 3,
+#   blocks: 1,
+#   slam_dunks: 1
+# }
 def game_hash
   {
     home: {
@@ -113,6 +131,9 @@ def game_hash
           steals: 22,
           blocks: 5,
           slam_dunks: 12
+        },
+        {
+          cat_name: "Oreo"
         }
       ]
     }
@@ -153,7 +174,7 @@ def shoe_size(player_name)
   find_player(player_name)[:shoe] # Number
 end
 
-# Homework!
+# Homework
 # map, select
 
 # 1. give me all the players with assists > 5
@@ -163,7 +184,6 @@ end
 # ["", "", ""]
 
 # 3. Convert each one to an each
-
 
 binding.pry
 

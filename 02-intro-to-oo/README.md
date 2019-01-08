@@ -16,6 +16,15 @@ aka: Object Oriented Programming (OOP)
 * Get more practice with array compositions (`each`, `map`, `select`, `find`)
 * Explain the need for variable scope and why it's important to not utilize global variables
 
+Object => container, a noun, a thing, so useful
+something in code to represent a real world thing
+=> broke down
+=> are a way to group information together so that we can differentiate between them
+
+sending some sort of message to an object to do work
+you are telling the string to do a stringy thing
+
+
 ## Outline / Objectives
 
 ### Objects!

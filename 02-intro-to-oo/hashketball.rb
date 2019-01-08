@@ -1,5 +1,23 @@
 require 'pry'
 
+# some sort of data => other hashes => basketball stats, game hash
+
+# ruby is very nice to you
+
+# "Alan Anderson" <= the name of a player
+#
+# a single player
+# {
+#   player_name: "Alan Anderson",
+#   number: 0,
+#   shoe: 16,
+#   points: 22,
+#   rebounds: 12,
+#   assists: 12,
+#   steals: 3,
+#   blocks: 1,
+#   slam_dunks: 1
+# }
 def game_hash
   {
     home: {
@@ -113,6 +131,9 @@ def game_hash
           steals: 22,
           blocks: 5,
           slam_dunks: 12
+        },
+        {
+          cat_name: "Oreo"
         }
       ]
     }
@@ -153,6 +174,46 @@ def shoe_size(player_name)
   find_player(player_name)[:shoe] # Number
 end
 
+# Homework!
+# map, select
+
+# 1. give me all the players with assists > 5
+# [{}, {}, {}]
+
+# 2. give me an array of just the player names
+# ["", "", ""]
+
+# 3. Convert each one to an each
+
+# Problem 1: Using hashes for everything => can't differentiate
+# => The goal of these hashes is to represent different things in code
+# Problem 2: Our methods cannot tell them apart either
+# => our methods are just generic, there's no controlling what they are for
+
+# Group them all together <= going to help us do this
+
+reggie_evans = {
+  player_name: "Reggie Evans",
+  number: 30,
+  shoe: 14,
+  points: 12,
+  rebounds: 12,
+  assists: 12,
+  steals: 12,
+  blocks: 12,
+  slam_dunks: 7
+}
+
+# PascalCase
+# camelCase
+# snake_case
+# kebab-case
+# a class is a type of object
+# an instance of a class is one instance of that object
+# => occurance, example
+class BasketballPlayer # kind of like a blueprint
+  # maybe those mehtods come by default, from the class from object
+end
 
 binding.pry
 
