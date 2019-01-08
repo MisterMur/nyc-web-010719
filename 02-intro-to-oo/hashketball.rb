@@ -212,8 +212,120 @@ reggie_evans = {
 # an instance of a class is one instance of that object
 # => occurance, example
 class BasketballPlayer # kind of like a blueprint
+  # instance variable <= a variable that is tied to the instance
+  # class variable <= store all the basketball players here
+
+  @@players_array = [] # setup the default value for the class variable
+
+  # yes => put these up top so it's easier to read
+
+  # macro
+  attr_reader :name #, :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks # writing your getter method(s)
+  # attr_writer :name, :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks # write your setter methods
+
+  puts "here"
+  # binding.pry
+  # this does both
+  attr_accessor :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
+
+  puts "there"
+  # binding.pry
+  # def namessss
+  #   binding.pry
+  #   @namessss
+  # end
+
+  # special method that is run when you do ClassName.new
+  def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
+    # binding.pry
+    # CMD + D
+    # CMD + Shift + Arrow
+    # Arrow button
+    # CMD + Arrow
+    @name = player_name # this never really changes
+    @number = number
+    @shoe_size = shoe
+    @points = points
+    @rebounds = rebounds
+    @assists = assists
+    @steals = steals
+    @blocks = blocks
+    @slam_dunks = slam_dunks
+
+    # since this is run every time I do .new
+    # adds it for me, i will write the code here
+    @@players_array << self
+    # binding.pry
+    # self is very special. it can be called anywhere
+    # who called me => who called the method I'm in
+      # exception, initialize <== the thing being made
+
+  end
+
+  # binding.pry
+  # class method
+  def self.players_array # BasketballPlayer.players_array
+    @@players_array
+  end
+  # no shortcut
+
+  # instance methods for my basketball player instance
+  def slam_dunk
+    # binding.pry
+    puts "NIIIICEEE!!!"
+    @slam_dunks += 1
+    @points += 2
+  end
+
+  def layup
+
+  end
+
+  # class method <== we want to know what we can do with classes
+
+# programming is creativity you can do anything!!!!
+
+  # instance method
+  # getters <= for getting instance variables
+  # def name
+  #   # to do whatever i want
+  #   @name
+  # end
+
+  # instance method
+  # setter method
+  # def name=(name)
+  #   # this will do whatever you want it to do
+  #   # binding.pry
+  #   # set the instance vairable to name
+  #   @name = name
+  # end
+
+  # def number
+  #   @number
+  # end
+
+  # def number=(new_number)
+  #   @number = new_number
+  # end
+
+  # copy paste
+  # programmers are lazzzzzy
+
   # maybe those mehtods come by default, from the class from object
 end
+
+b1 = BasketballPlayer.new("Sugar", 1, 14, 12, 12, 12, 12, 12, 7)
+b2 = BasketballPlayer.new("Cinnamon", 2, 14, 12, 12, 12, 12, 12, 7)
+# players_array = [b1, b2]
+
+b3 = BasketballPlayer.new("Cinnamon 2", 2, 14, 12, 12, 12, 12, 12, 7)
+# players_array << b3
+
+# there must be a better way
+
+# I kept a list of all the players somewhere
+# so that I can run methods on that list
 
 binding.pry
 
