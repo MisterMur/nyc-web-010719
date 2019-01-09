@@ -24,18 +24,21 @@
 
 ### Define
 
-* Model
-* Domain
-* Domain modeling
-* Relationships
+* Model - representation, toy models; class => blueprints
+* Domain - subject matter; learn.co => learn, programming
+  * YouTube -> videos, google
+* Domain modeling - process of figuring out your domains and models
+* Relationships - how one model is related to another
   * One to many relationship
+    * A `has_many` B
+    * B `belongs_to` A
   * Many to many relationship (for next lecture!)
   * belongs to
   * has many
 
 _Why do we care so much about codifying and being really specific about the terminology of has-many/belongs-to?_ The terms are very powerful because we can use the same idea to describe relationships across many different types of domains. The relationship between artist and song, is the same as book and author, user and tweets, etc.
 
-* Schema
+* Schema - visual representation of your domain model
 * Single Source of Truth
 
 ### Deliverables

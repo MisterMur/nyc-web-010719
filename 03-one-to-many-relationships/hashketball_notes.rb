@@ -138,6 +138,15 @@ def game_hash
   }
 end
 
+# Teams
+class Team
+
+end
+
+# Colors
+
+# The Game
+
 # Return => Array of player Hashes
 def all_players
   home_players = game_hash[:home][:players] # Array of player Hashes
