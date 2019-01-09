@@ -145,13 +145,6 @@ def all_players
   home_players + away_players # Array of player Hashes
 end
 
-# Arguments:
-#   player_name => String
-# Return => Number
-def num_points_scored(player_name)
-  # Hash       # String     #Symbol
-  find_player(player_name)[:points] # Number
-end
 
 # Arguments:
 #   player_name => String
@@ -161,16 +154,6 @@ def shoe_size(player_name)
   find_player(player_name)[:shoe] # Number
 end
 
-# Arguments:
-#   player_name => String
-# Return => a player Hashes
-def find_player(player_name)
-  # Array of player Hashes
-  all_players.find do |player| # player Hash
-    # String                # String
-    player[:player_name] == player_name # Boolean
-  end
-end
 
 
 #######################################
@@ -182,6 +165,7 @@ end
 #     an object is a thing that
 #     responds to message to do work (methods)
 #   Objects have methods. They respond to messages to do work.
+# =>  .methods
 #   They cannot respond to messages (methods) that they don't
 #   understand! NoMethodError!!
 
@@ -195,12 +179,19 @@ end
 
 # Ruby
 # - Syntactic Sugar => makes some syntax much nicer
-
+# .method(arg) => [:player_name] => .[](:player_name)
 
 # THE PROBLEM!
 #   Consider these two Hashes. What do they represent?
 jeff_adrien = { player_name: "Jeff Adrien", number: 4, shoe: 18, points: 10, rebounds: 1, assists: 1, steals: 2, blocks: 7, slam_dunks: 2 }
 oreo = { name: "Oreo", color: "black and white", age: 8 }
+# Array => lists of things
+# Hash => references other information in a map
+
+def slam_dunk(player_hash) # one hash from another
+
+end
+
 #   These Hashes have different data.
 #   They represent different objects.
 #   A Hash of a player should be different from a Hash of a cat.
@@ -221,6 +212,7 @@ class BasketballPlayer # this has to be capitalized
   # writes our getter methods
   attr_reader :name #, :number, :shoe_size, :points, :rebounds, :assists, :steals, :blocks, :slam_dunks
   # instance method => getter
+  # jeff_adrien[:player_name] => jeff.player_name
   # def name
   #   @name
   # end
@@ -236,11 +228,13 @@ class BasketballPlayer # this has to be capitalized
   # A place to store information pertinant to the entire
   # Player class.
   @@players_array = [] # Array of Player instances
+  # ALL = [] # class constant, you cannot reassign it wholesale and change its type
 
   # This is the method called when we do Player.new
   # It creates a new _instance_ of a Player
   #   an instance => a moment
                  # String     Number  Number Number Number    Number   Number  Number  Number
+  # BasketballPlayer.new => constructor method
   def initialize(player_name, number, shoe, points, rebounds, assists, steals, blocks, slam_dunks)
     # @instance_variable <= @ sign in front is an instance variable
     # instance variables, stay with the instance!
@@ -266,9 +260,11 @@ class BasketballPlayer # this has to be capitalized
   def slam_dunk
     puts "NIIIIIICE!!!"
     @slam_dunks += 1
-    @points += 2
+    two_pointer
 
     self # <= what is this?
+      # who called it
+
     # self can be called anywhere
     # it will tell you who called the method you are in
     # So ask yourself, who called me? => That's self!
@@ -280,6 +276,11 @@ class BasketballPlayer # this has to be capitalized
 
   def layup
     puts "Cool."
+    self.two_pointer
+  end
+
+  # helper method
+  def two_pointer
     @points += 2
   end
 
@@ -300,6 +301,36 @@ class BasketballPlayer # this has to be capitalized
     @@players_array # in this class method, we are writing
           # a getter to retrieve the @@players_array class variable
   end
+
+
+  # Arguments:
+  #   player_name => String
+  # Return => a player Hashes
+  # Helper Method
+  def self.find_player(player_name)
+    # Array of BasketballPlayer instances
+    @@players_array.find do |player| # player Hash
+      # String                # String
+      player.name == player_name # Boolean
+    end
+  end
+
+  # Arguments:
+  #   player_name => String
+  # Return => Number
+
+  # what does it do?
+  # looks at the person and finds how many points they scored?
+
+  # This is asking to find the points of a player with this given name.
+  # => I don't know who the player is. I only know their name.
+  def self.num_points_scored(player_name)
+    # Hash       # String     #Symbol
+    # binding.pry
+    find_player(player_name).points # Number
+  end
+
+
 
   ## QUESTION!
   #   Those Hashketball methods, where do they belong?
@@ -360,6 +391,31 @@ $all_players << p2
 #   Just like how we can ask an individual player [instance]
 #   for information about just that player?
 # => ENTER CLASS VARIABLE && CLASS METHODS!
+
+
+# oreo = { name: "Oreo", color: "black and white", age: 8 }
+
+class Cat
+  attr_accessor :age, :color # diown the middle... the person you ask? your boss
+  attr_reader :name
+
+  @@all = [] # is something leading up to databases
+
+  def self.all
+    @@all
+  end
+
+  def initialize(name, color, age)
+    @name = name
+    @color = color
+    @age = age
+
+    @@all << self
+  end
+
+end # end of Cat class
+
+c1 = Cat.new("Oreo", "black and white", 8)
 
 binding.pry
 
