@@ -4,6 +4,34 @@ class BasketballPlayer
 
   @@all = []
 
+
+  # Homework
+  # map, select
+
+  # 1. give me all the players with assists > 5
+  # [{}, {}, {}]
+  # both, interesting [5, 6, 7, 2]
+  # select => grab everyone that fits this condition/category
+  def self.all_high_assist_players
+    @@all.select do |player|
+      player.assists > 5
+    end
+
+  # 2. give me an array of just the player names
+  # ["", "", ""]
+  # map => [5, 6, , 5] for changing things (collect)
+  def self.player_names
+    @@all.map do |player|
+      player.name
+    end
+  end
+  # reduce / inject # Why?
+
+  # find / detect # Ruby way
+
+  # 3. Convert each one to an each
+
+
   # The bad way to handle one to many on the belongs_to side.
   def team
     Team.all.find do |team| # Team instance
