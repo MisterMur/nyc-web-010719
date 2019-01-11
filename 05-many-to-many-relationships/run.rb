@@ -10,14 +10,20 @@ require_relative './nut_house' # this is a nest
 u1 = User.new("Dan Abramov")
 u2 = User.new("Someone Else")
 
-# test data
-t1 = Tweet.new("whasdkjfk;asdjfk", u1)
-t2 = Tweet.new("another message", u2)
-t3 = Tweet.new("I think reducers get a bad rep because of complexity baggage associated with all the other parts of Redux that they’re being taught with. Reducers will be a more important to React soon. I want to help explain why they make sense for local state and are *simpler* than setState.", u1)
+# This just test code:
+s1 = Squirrel.new("brown", "Rocky", "soft")
+s2 = Squirrel.new("black and grey", "Alvin", "course")
 
+t1 = Tree.new("maple")
+t2 = Tree.new("elm")
+t3 = Tree.new("redwood")
 
+nh1 = NutHouse.new("big", 1, 5, s1, t1)
+nh2 = NutHouse.new("big", 1, 5, s2, t1)
+nh3 = NutHouse.new("small", 0, 1, s1, t2)
 
-
+# s1.nut_houses
+# nh1.squirrel
 
 
 binding.pry
