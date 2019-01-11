@@ -20,4 +20,13 @@ class Tree
     end
   end
 
+  def squirrels
+    # NutHouse
+    # nh.tree => self
+    # map => squirrel
+    self.nut_houses.map do |nh|
+      nh.squirrel
+    end
+  end
+
 end # end of Tree class

@@ -28,5 +28,24 @@ class Squirrel
 
   def trees
     # who to ask???
+    # NutHouse => Single Source of Truth => because nobody else knows
+    # every instance of a nuthouse represents one relationship
+
+    # Specifically, we want to know about OUR trees
+    # NutHouse.all.select do |nh|
+    #   nh.squirrel == self
+    # end
+
+    # array of NutHouse instances
+    # map <- we want to change that array to the data we want
+    # binding.pry
+
+    # self.nut_houses => referrring to that method => return an array of NutHouse instances
+
+    self.nut_houses.map do |nh| # NutHouse instance
+      nh.tree
+    end
+      # I want to know my trees
+
   end
 end # end of Squirrel class
