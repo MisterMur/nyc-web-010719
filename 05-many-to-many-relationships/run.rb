@@ -1,6 +1,9 @@
 require 'pry'
 require_relative './user'
 require_relative './tweet'
+require_relative './tree'
+require_relative './squirrel'
+require_relative './nut_house' # this is a nest
 
 # rubber ducking
 
