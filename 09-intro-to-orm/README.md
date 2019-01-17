@@ -14,20 +14,76 @@
 
 1. Books and Authors where each book has a single author. Books should have a title
 
-  Q: Write the SQL to find all books written by a certain author given that author's id
+  one-to-many
+
+  authors
+  primary key
+  id           | name             | age
+  1            | Jack Kerouac     | too old
+  2            | George RR Martin | 70 something
+
+  books
+  primary key                            foreign key
+  id          | genre | title          | pages | author_id
+  1           | beat  | big sur        | 200   | 1
+  2           | ????  | on the road    | 1     | 1
+  3           |       | game of thrones| 34234 | 2
+
+
+JOIN class => many-to-many
+
+  Q: Write the SQL to find all books written by a certain author given that author's id, "Jack Kerouac"
 
   ```SQL
+  SELECT *
+  FROM books
+  WHERE author_id = 1
 
+  SELECT name, title
+  FROM books
+  JOIN authors
+  ON authors.id = books.author_id
+  WHERE authors.name = "Jack Kerouac";
   ```
 
 2. Books and Authors where each book can have one or MULTIPLE authors. Books should have a title and authors should have a name.
 
   - What type of relationship is this?
+  - many-to-many
+
+  authors
+  primary key
+  id           | name             | age
+  1            | Jack Kerouac     | too old
+  2            | George RR Martin | 70 something
+
+  books
+  id          | genre | title          | pages
+  1           | beat  | big sur        | 200   
+  2           | ????  | on the road    | 1     
+  3           |       | game of thrones| 34234
+
+  author_books
+  id | book_id | author_id
+  1  | 1       | 1
+  2  | 2       | 1
+  3  | 3       | 2
+
+
+1           | beat  | big sur        | 200   | 1  | 1       | 1 | 1            | Jack Kerouac     | too old
+2           | ????  | on the road    | 1     | 2  | 2       | 1 | 1            | Jack Kerouac     | too old
+3           |       | game of thrones| 34234 | 3  | 3       | 2 | 2            | George RR Martin | 70 something
 
   Q. Write the SQL to find all books written by certain author given their name
 
   ``` SQL
-
+  SELECT *
+  FROM books
+  JOIN author_books
+  ON books.id = author_books.book_id  
+  JOIN authors
+  ON author_books.author_id = authors.id
+  WHERE authors.name = "Jack K"
   ```
 
 3. Squirrels have Nests in Trees -- Build table
@@ -68,6 +124,44 @@ Q: Write the SQL to find all Squirrels in a "christmas tree"
 ### CRUD REVIEW
 
 What are the four ways we can interact with Data?
+
+CRUD => Create, Read, Update, Delete
+- databases => SQL
+- Ruby => objects in memory => disappear after the program exits
+
+access it, reuse, analyze it, change it
+phone, video games, facebook (D), gmail <= server farms, databases
+spreadsheet, files, piece of paper
+
+if we can do it with ruby, we can not learn SQL
+- ORM => be able to communicate with a database without writing raw SQL
+  - Object => Objects, Ruby, everything
+  - Relational => many-to-many, object relations
+  - Mapper => .map
+    => mapping something => the tables in your databases, those rows => objects, in ruby
+
+Ruby to a databases => Active Record
+- orm allows our scripting language to communicate with a database
+- the layer between ruby and sql/database
+- the library that is most popular in Ruby is Active Record
+
+Write Ruby => runs SQL
+
+Create
+- SQL => Create Table, INSERT INTO
+- Ruby => class .all   .new()
+
+Read
+- SQL => SELECT
+- Ruby => puts, method, attr_readers
+
+Update
+- SQL => ALTER, CHANGE, UPDATE
+- Ruby => =, attr_writers
+
+Delete
+- SQL => DELETE
+- Ruby => .clear, shift, delete_at, pop
 
 ### Active Record Pattern
 

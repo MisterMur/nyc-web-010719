@@ -9,9 +9,14 @@ class TweetsApp
     puts 'Enter a message:'
     message = gets.chomp
 
+    # nothing is persisting
     tweet = Tweet.new({'username' => username, 'message' => message})
+    tweet.save # video game
+    # save to database
+    # binding.pry
 
     tweets = Tweet.all
+    # get everything from the database
     render(tweets)
   end
 

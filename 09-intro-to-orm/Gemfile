@@ -4,3 +4,5 @@ source "https://rubygems.org"
 
 gem "sqlite3"
 gem "pry"
+# gems in ruby are just libraries of code
+# Ruby is a gem, hence gem

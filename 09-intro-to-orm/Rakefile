@@ -2,5 +2,18 @@ require_relative 'config/environment'
 
 desc 'Loads up a console!'
 task :console do
+  puts "Start that pry!"
   Pry.start
 end
+
+desc 'Meow'
+task :meow do
+  puts "Meow!"
+end
+
+# no extension on Rakefile
+# rake will look for this file
+# Makefile, make
+
+# Why! Great Question!
+# becomes easier to navigate
