@@ -8,6 +8,35 @@ Intro to Active Record
 - Practice with ActiveRecord::Base instance and class methods
 - Perform persistent CRUD actions on one model using ActiveRecord
 
+Domain - many-to-many
+Anything?
+TV
+shows, channels, actors, users/viewers
+shows >--------< actors
+  |                |
+  ---< contracts >--
+
+show has_many contracts
+show has_many actors through contracts
+
+contract belongs_to show
+contract belongs_to actor
+
+actor has_many contracts
+actor has_many shows through contracts
+
+contracts
+- id
+- money
+- actor_id
+- show_id
+
+class => singular, table => plural
+shows / Show
+- episode
+- season
+- genre
+
 ## Overview
 
 - Review Project Setup (files, migrations, models)
