@@ -16,8 +16,13 @@ class App
     resp = Rack::Response.new
 
     # TODO: create some new songs
+    Song.new('Middle Child')
+    Song.new('Fly Me To The Moon')
+    Song.new('Does anyone listen to music?') # doesnt!
 
-    if request.path =~ /songs/
+    # dynamic vs static
+    # => songs => interpolating
+    if request.path =~ /songs/ # kinda equals, regex
       song_list_items = Song.all.map { |song| "<li>#{song.title}</li>" }.join
 
       resp.write("
@@ -27,9 +32,16 @@ class App
           </ul>
         ")
 
+    # static => hardcoded, never changes
     # elsif req.path =~ /artists/
     elsif request.path.match(/artists/)
-      resp.write('<h1>Artists List</h1>')
+      resp.write('<h1>Artists List</h1>
+        <ul>
+          <li>J Cole</li>
+          <li>Frank Sinatra</li>
+          <li>All of us</li>
+        </ul>
+        ')
     else
       resp.write('<div>
         <h1>Not Found</h1>

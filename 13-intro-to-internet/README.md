@@ -4,11 +4,50 @@
 
 ## SWBATs
 
-- [ ] Explain in general how the internet works
-- [ ] Define the world wide web
-- [ ] Describe the client-server model and the request-response lifecycle
-- [ ] Utilize the browser to make a request and see a response
-- [ ] Make a web server with Rack
+- [x] Explain in general how the internet works
+- [x] Define the world wide web (www)
+- [x] Describe the client-server model and the request-response lifecycle
+- [x] Utilize the browser to make a request and see a response
+- [x] Make a web server with Rack
+
+
+Place to interact with other people
+Place to not interact with other people
+Information
+A collection of websites
+
+How are they connected?
+- literal wires = cables
+
+Vinton Cerf
+- TCP => TCP/IP
+- TCP => Transmission Control Protocol => how to send information
+- IP => Internet Protocol => Address => where to send information
+  - it's just a bunch of number
+  - the URL points to one (or more) of these numbers
+  - 23.234.12.65 => phone number
+  - learn.co => name, contact
+
+- HTML => Hypertext Markup Language
+- URL => Uniform Resource Locator => standardized
+  - http:// => HTTP - HyperText Transfer Protocol
+
+Server - place of data, gives out IP address, software running on a computer
+
+ISP => Internet Service Provider
+- Verizon, Optimum, Sprectrum, Comcast, Time Warner Cable
+- ADSL, Fiber => drilling holes into your apartment and giving you the cable
+
+DNS - Domain Name Server => learn about this in mod 6 => some do...
+
+HTTP => different types of requests you can make
+- GET => HTTP Verbs
+
+- "place of data" => locally, database
+  - GET => SELECT => READ
+  - => CREATE => POST
+  - UOPDATe => PUT/PATCH => guess which is the more common one
+  - DELETE => DELETE
 
 ### History of the Internet
 
