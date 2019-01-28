@@ -1,0 +1,13 @@
+<h1>All dem books!</h1>
+
+<!-- ice cream => runs ruby code but doesn't put it in the html -->
+<!-- do this!!! -->
+<% @books.each do |book| %>
+  <!-- squid rungs the ruby code and puts it on the html -->
+  <p><%= book.title %></p>
+<% end %>
+
+<!-- don't do this!!! -->
+<hr>
+<%= Book.first %>
+<hr>

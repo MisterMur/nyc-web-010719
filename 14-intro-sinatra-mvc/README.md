@@ -2,15 +2,15 @@
 
 ## SWBATs
 
-- [ ] Explain the Model View Controller (MVC) pattern and give an example
-- [ ] Explain how web frameworks (like Sinatra) use the MVC pattern and why
-- [ ] Define 'convention over configuration'
-- [ ] Implement one model that inherit from ActiveRecord
-- [ ] Implement one controller to route and process requests
-  - [ ] Demonstrate how the params hash changes and where the data comes from
-- [ ] Implement ERB template and get it to render data from controller and model
-- [ ] Practice file structure in Sinatra
-- [ ] Identify the connection between REST and CRUD
+- [x] Explain the Model View Controller (MVC) pattern and give an example
+- [x] Explain how web frameworks (like Sinatra) use the MVC pattern and why
+- [x] Define 'convention over configuration'
+- [x] Implement one model that inherit from ActiveRecord
+- [x] Implement one controller to route and process requests
+  - [x] Demonstrate how the params hash changes and where the data comes from
+- [x] Implement ERB template and get it to render data from controller and model
+- [x] Practice file structure in Sinatra
+- [x] Identify the connection between REST and CRUD
 
 ## Outline
 
@@ -33,31 +33,101 @@
 
 ### New!
 
-- *Model*:
-- *View*:
-- *Controller*:
+MVC => layer
+- *Model*: Mod 1 => class, table
+- *Controller*: control everything - handle the communication between the model, view
+- *View*: what you see => HTML => rendered version of the HTML
+
+MVC is just one way of writing web application => but this is the one you will be tested on, so remember it.
+
 - *RESTful Routing (REST)*:
+  - CRUD maps to HTTP Verbs
+  - CREATE => POST
+  - READ => GET
+  - UPDATE => PATCH/PUT
+  - DELETE => DELETE
+
+- REST => REpresentational State Transfer
+
 - *convention over configuration*:
+  - convention => a standard => really love standards, protocols, stuff
+  - configuration => more customized => there is a time and place for this
 
 ## Deliverables
 
 For each deliverable what is the route?
 
 - view information on an individual book
-
+  - READ => GET => READING DATA FROM THE DATABASE!!!
+  - /books/:id
+    - why id?
+      - it's unique
+      - based off the database so it has an id
+      - SSN => very private => very long, maybe hard to read
+      - why not a name? => spacing, spelling => what if the name changes
+        - bookmarks break!
+        - link rot
 
 - view all books
-
+  - READ => GET <= http verb matters
+  - /books
 
 - create a new book
-
+  - 1. create a form...
+    - GET
+    - /books/new
+      - /apple <= custom routing
+  - 2. the send the post to create
+    - CREATE => POST
+    - /books
+      - data => parameters => you need a form
+    - Resource => URL + Path/Route => Uniform Resource Locator => finding some data
+      - that data is our resource
+      - www.barnesandnoble.com/books
 
 - edit an existing book
-
+  - different form?
+  - Find the book, get the form to edit that book
+    - GET
+    - /books/:id/edit
+  - Edit the book
+    - PATCH/PUT
+      - which one to use?>?>??
+      - difference =>
+        - PATCH updates one or more columns
+          - the more common one
+        - PUT updates everything
+    - /books/:id
 
 - delete an existing book
+  - find the book to delete
+    - GET
+    - /books/:id
+  - then we delete it
+    - DELETE
+    - /books/:id
 
+7 restful routes
 
+READ
+- all the books => GET /books => Index
+- one book => GET /books/:id
+
+CREATE
+- GET /books/new
+- POST /books
+
+UPDATE
+- GET /books/:id/edit
+- PATCH/PUT /books/:id
+
+DELETE
+- DELETE /books/:id
+
+ribbit => gero
+bow wow, bark, woof woof => wan wan
+cockadoodledoo => kokekokeko
+meow => nyaaaa
 
 ## Lecture Notes
 
