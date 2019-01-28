@@ -8,7 +8,7 @@
 - [ ] Define the world wide web
 - [ ] Describe the client-server model and the request-response lifecycle
 - [ ] Utilize the browser to make a request and see a response
-- [ ] Practice making a web server with Rack
+- [ ] Make a web server with Rack
 
 ### History of the Internet
 
