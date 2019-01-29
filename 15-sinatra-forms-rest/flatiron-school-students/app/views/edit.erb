@@ -1,0 +1,17 @@
+<h1>Edit that student!!!</h1>
+
+<!-- patch '/students/:id' do -->
+<form action="/students/<%= @student.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  Name:<br>
+  <input type="text" name="student[name]" value="<%= @student.name %>">
+  <br>
+  Age:<br>
+  <input type="number" name="student[age]" value="<%= @student.age %>"><br>
+  Module:<br>
+  <input type="number" name="student[module]" value="<%= @student.module %>"><br>
+  Worth:<br>
+  <input type="text" name="student[worth]" value="<%= @student.worth %>"><br>
+  <br>
+  <input type="submit" value="Submit">
+</form>

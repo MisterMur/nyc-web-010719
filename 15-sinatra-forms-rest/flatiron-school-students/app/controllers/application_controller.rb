@@ -5,9 +5,15 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
+    # look at all the request, look at params
+    # look for a _method key
+    # if that key exists and has some sort of value, specifically an http verb
+    # it will route to the correct controller action for that verb
   end
 
   get "/" do
+    puts "did I hit homepage"
     erb :welcome
   end
 
@@ -30,6 +36,7 @@ class ApplicationController < Sinatra::Base
 
   # in the controller => the go between for the model and view
   get '/students' do
+    puts "did I hit index"
     # model
     @students = Student.all
 
@@ -39,12 +46,14 @@ class ApplicationController < Sinatra::Base
 
   # whjat about me?>? => rails
   get '/students/new' do
+    puts "did I hit new"
     # model
     # response / view
     erb :new
   end
 
   get '/students/:id' do
+    puts "did I hit show"
     # model
     @student = Student.find(params["id"]) # params => IndifferentHash, it's hash-like, but it's not a hash.
 
@@ -55,6 +64,7 @@ class ApplicationController < Sinatra::Base
   # whatever happens in the request, stays in the request = HTTP is stateless
   # for creating
   post '/students' do
+    puts "did I hit post students"
     # model
     # create la student
     # Student.create()
@@ -73,6 +83,30 @@ class ApplicationController < Sinatra::Base
     # response => redirect => Status Code 3XX response => the browser will receive it
     # request => GET to that URL it got
     # response => erb :show
+  end
+
+  # update routes
+  # /students/1334234/edit
+  get '/students/:id/edit' do
+    puts "did I hit edit"
+    # model
+    # when we are trying to edit something, do we need data?
+    # we do... specifically what data?
+    # that person we are trying to edit
+    @student = Student.find(params[:id])
+    # response / view
+    erb :edit
+  end
+
+  patch '/students/:id' do
+    # binding.pry # what up yo????
+    # model
+    # update a student
+    @student = Student.find(params[:id])
+    @student.update(params[:student])
+
+    # response
+    redirect "/students/#{@student.id}"
   end
 
 end
