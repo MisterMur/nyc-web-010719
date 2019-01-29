@@ -22,7 +22,16 @@ Sinatra Forms
 ## Objectives
 
 * Intro to Corneal
+  - Gem written by one of you => flatiron grad
 * Review Sinatra, Build out more routes
+  - I need a domain => flatiron-school => students
+  - Domain Model
+    - students => name, age, module, worth...
+  - model
+  - migration
+  - run migrate
+  - test => check that schema for typos
+  - seed
 * Learn about forms
 
 ## Lecture Notes
