@@ -7,7 +7,7 @@ Sinatra Forms
   - Provided via Corneal
 - [ ] Confidently define REST and how it works with HTTP
   - Describe how the HTTP verbs correspond to REST
-- Implement RESTful Routing in code
+- [ ] Implement RESTful Routing in code
   - [ ] Index page
   - [ ] Show page
   - [ ] New page
@@ -15,8 +15,9 @@ Sinatra Forms
   - [ ] Create route
   - [ ] Update route
   - ~~Delete route~~
+- [ ] Use `params` hash for dynamic URL
 - [ ] Write form templates in HTML with ERB
-- [ ] Demonstrate how to build `params` hash from forms
+  - [ ] Demonstrate how to build `params` hash from forms
 
 ## Objectives
 
