@@ -1,0 +1,15 @@
+<h1>Insert the form to create a new instance of your model.</h1>
+
+<form action="/victims" method="post">
+  NAME:<input type="text" name="name" placeholder="give me a name">
+  AGE:<input type="text" name="age" placeholder="how old?">
+  SURIVE:<input type="text" name="survive" placeholder="did you make it?">
+  WHAT STORM?:
+
+  <select name="storm_id">
+    <% @storms.each do |storm| %>
+      <option value="<%= storm.id %>"><%= storm.name %></option>
+    <% end %>
+  </select>
+  <input type="submit">
+</form>
