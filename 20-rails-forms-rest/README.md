@@ -11,6 +11,18 @@ Rails Forms & REST
 
 ## Outline
 
+Domain
+=> storms => weather?
+- victims
+- flavor?? => type of storm
+- name
+
+rails generate model Storm victims:integer flavor name
+rails g controller storms
+
+rails g resource Storm victims:integer flavor name
+- it's being nice and setting up your routes for you
+
 1. New domain that extends to tomorrow.
   * `rails g resource ModelName column:type`
   * RESTful routes via `resources`, `only`, `except`

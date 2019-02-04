@@ -1,0 +1,2 @@
+class StormsController < ApplicationController
+end
