@@ -1,0 +1,6 @@
+<h1>Hello someone</h1>
+<ul>
+<% @parties.each do |party| %>
+  <li><%= party.location %> | <%= party.number_of_attendees %></li>
+<% end %>
+</ul>
