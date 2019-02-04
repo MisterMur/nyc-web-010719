@@ -17,10 +17,10 @@ Rails Forms & REST
 2. Build out `index`, `show`, `delete`.
   * Path Helpers, `rails routes`, custom path helpers
   * `<a>` vs `link_to`, `method: HTTP_Verb`
+  * `button_to` vs `button_tag`
 3. Build out `new`, `create`, `edit`, `update`.
   * `form_for` vs `form_tag`
   * CSRF Token
   * strong params
 4. Extra Stuff:
   * Abstraction! Partials, `before_action`
-  * `button_to` vs `button_tag`
