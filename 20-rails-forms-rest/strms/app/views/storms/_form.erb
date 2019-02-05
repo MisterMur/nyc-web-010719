@@ -1,0 +1,16 @@
+whatever is here
+
+<%= form_for(@storm) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :flavor %>
+  <%= f.number_field :victims %>
+  <%= f.submit %>
+<% end %>
+
+
+<%= form_for :storm, url: storms_path do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :flavor %>
+  <%= f.number_field :victims %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,32 @@
+<h1>Edit <%= @storm.name %></h1>
+
+<h2>This is sinatra way:</h2>
+
+<form action="/storms/<%= @storm.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="name" placeholder="name that storm" value="<%= @storm.name %>">
+  <input type="text" name="flavor" placeholder="yummy" value="<%= @storm.flavor %>">
+  <input type="number" name="victims" placeholder="some number" value="<%= @storm.victims %>">
+  <input type="submit" value="Whatever to call this button">
+</form>
+
+<pre>
+form_for
+- why? we are actually goinmg to do something to a model
+
+This is why giving it an existing @storm results in a patch type form with all the right stuff.
+Storm => @storm.class.to_s.downcase
+.id => # => url path => /storms/:id
+because it has an id, it also knows you want to patch
+to fill in values, it does @storm.run_the_method => @storm.send(:wrong)
+
+programming is creativity => you are hackers => you can get anything to work if you try hard enough
+it just might not look nice
+</pre>
+
+
+
+
+<%= render "form" %>
+
+form_tag

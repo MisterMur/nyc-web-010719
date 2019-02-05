@@ -18,9 +18,15 @@
 <% end %>
 
 <h2>form_for - has a model</h2>
-<%= form_for :storm, url: storms_path do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :flavor %>
-  <%= f.number_field :victims %>
-  <%= f.submit "change that name" %>
-<% end %>
+<pre>
+how does this magic workl?
+if there is no values in the instance, id, it will be like
+hey, you're making a new one!
+let me give you the storms_path
+
+.class. => you want to nest this under a nested hash
+
+post => there is no id
+</pre>
+
+<%= render "form" %>
