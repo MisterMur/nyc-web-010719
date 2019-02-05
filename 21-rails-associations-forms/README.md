@@ -23,6 +23,14 @@ Rails Associations & Forms
 - flavor?? => type of storm
 - name
 
+has_many storms
+The world?
+The city?
+city
+- name
+- population
+
+
 ## Lecture Notes
 
 ### CRUD Review
