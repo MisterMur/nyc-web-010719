@@ -3,11 +3,11 @@ Rails Forms & REST
 
 ## SWBATs
 
-* Use path helpers and customize them.
-* Distinguish between `form_for` vs `form_tag` based on use case.
-* Understand the need for strong params & CSRF tokens.
-* Begin thinking about checking information before creating things.
-* Begin thinking about building a better UX - `link_to`, `button_to`, `button_tag`.
+* [x] Use path helpers and customize them.
+* [ ] Distinguish between `form_for` vs `form_tag` based on use case.
+* [-] Understand the need for strong params & CSRF tokens.
+* [ ] Begin thinking about checking information before creating things.
+* [x] Begin thinking about building a better UX - `link_to`, `button_to`, `button_tag`.
 
 ## Outline
 

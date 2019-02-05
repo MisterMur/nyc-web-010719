@@ -1,0 +1,26 @@
+<h1>some thing to create a storm!!!</h1>
+
+<form action="/storms" method="post">
+  <input type="text" name="name" placeholder="name that storm" value="starting">
+  <input type="text" name="flavor" placeholder="yummy">
+  <input type="number" name="victims" placeholder="some number">
+  <input type="submit" value="Whatever to call this button">
+</form>
+
+<!-- two ways: form_tag and form_for -->
+
+<h2>form_tag - for searches, the reading said that!</h2>
+<%= form_tag('/storms') do %>
+  <%= text_field_tag "storm[name]" %>
+  <%= text_field_tag :flavor %>
+  <%= number_field_tag :victims %>
+  <%= submit_tag 'Whatever to call this button' %>
+<% end %>
+
+<h2>form_for - has a model</h2>
+<%= form_for :storm, url: storms_path do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :flavor %>
+  <%= f.number_field :victims %>
+  <%= f.submit "change that name" %>
+<% end %>

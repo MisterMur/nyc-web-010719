@@ -1,0 +1,7 @@
+<h1>all dem storms</h1>
+
+<% @storms.each do |storm| %>
+  <!-- if yoiu're going to do common paths a lot, use a path helper -->
+  <%= link_to storm.name, storm_path(storm) %>
+  <p><%= storm.flavor %></p>
+<% end %>

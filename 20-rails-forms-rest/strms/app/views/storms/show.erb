@@ -1,0 +1,19 @@
+<h1>a single storm</h1>
+
+<p><%= @storm.name %></p>
+<p><%= @storm.flavor %></p>
+<p><%= @storm.victims %></p>
+
+<%= link_to "get back", storms_path %>
+
+<!-- hidden method for the delete
+  whaacky confirm thingy
+  authrneiticify token
+We are trying to be safe!
+We don't want submits from just anywhere.
+We want things from us.
+CSRF => cross site
+-->
+<%= button_to('Destroy the storm!!!', storm_path(@storm), method: "delete") %>
+
+<p>:(</p>

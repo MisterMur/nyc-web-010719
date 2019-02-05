@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Storm.destroy_all
+
+puts "Hey I'm making some storms"
+Storm.create(victims: 10000, flavor: "meatballs", name: "spaghetti")
+Storm.create(victims: 9000, flavor: "chocolate", name: "hershey")
+Storm.create(victims: 8000, flavor: "blue blueberry", name: "blue?")
+puts "storms made!"
