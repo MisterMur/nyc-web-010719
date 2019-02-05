@@ -1,0 +1,11 @@
+<h1>new city </h1>
+
+<%= form_for(@city) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.number_field :population %>
+  <%= f.submit %>
+<% end %>
+
+model, add has_many
+City -< Storm
+foreign key => in storms => it belongs to
