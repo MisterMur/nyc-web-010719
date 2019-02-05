@@ -37,7 +37,7 @@ class StormsController < ApplicationController
 
   # strong params!
   def storm_params
-    params.require("storm").permit(:name, :flavor, :victims)
+    params.require("storm").permit(:name, :flavor, :victims, :city_id)
   end
 
   def find_storm
