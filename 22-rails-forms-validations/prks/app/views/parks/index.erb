@@ -1,0 +1,9 @@
+<h1>do whatever we want!</h1>
+
+<% @parks.each do |park| %>
+  <ul>
+    <li><%= park.name %></li>
+    <li><%= park.location %></li>
+    <li><%= park.category %></li>
+  </ul>
+<% end %>

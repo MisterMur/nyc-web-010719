@@ -10,6 +10,26 @@ Rails Forms and Validations
 * Create custom validations
 * Implement the Flash Hash to render error messages
 
+
+I need a domain
+=> parks
+Park
+- name
+- location
+- type
+
+
+Validations =>
+
+frontend => user can touch this
+backend => they can't touch this
+
+Model, View, Controller
+View => front
+Controller => if you do it here, gotta do it over and over
+Model => it's where the attributes are, active record?, that's where you're actually creating
+- should go here, cause it makes sense
+
 ## Outline
 
 1. New Rails application == New Domain!
