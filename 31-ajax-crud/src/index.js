@@ -5,16 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	function fetchPokemon(){
-		fetch("http://localhost:3000/pokemon", {method: "GET"})
+		fetch("http://localhost:3000/pokemon", {method: "GET", mode: 'no-cors'})
 		.then(     function(response) {
 			// debugger;
-			// console.log(response.json())
-			return response.json()
+			 console.log(response.json())
+			// return response.json()
 		})
-		.then(    (data) => {
-			   allPokemon = data
-			   showAllPokemon(data)
-		})
+		// .then(    (data) => {
+		// 	   allPokemon = data
+		// 		 console.log('here')
+		// 	   showAllPokemon(data)
+		// })
 	}
 
 // allPokemon
