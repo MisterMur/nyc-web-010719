@@ -81,6 +81,55 @@ Intro to React
 
 ## Lecture Notes
 
+What didn't you like?
+- everything was messy
+- data attributes on everything!!!
+- explicitly returning functions <== does'nt change this
+
+
+SPAs => Single Page Application
+
+Declarative vs Imperative
+- your code is written in way that it reads like what it does
+- Imperative is when you define each indeividual step
+- Decalrative is jo different from imperative
+
+Component is just a part of something.
+- then you will be able to start seeing patterns
+
+Write Once, Run Everywhere
+- Java
+
+Components
+- Single Responsibility Principle
+  - you look for patters
+- Declarative
+- Reusable
+- Composable
+- Template in mind
+
+<div>
+  <h2>What video game sound effect can you still hear in your head?</h2>
+  <img src=""/>
+  <button>Comments</button>
+  <button>Share</button>
+  <button>Save</button>
+  <button>Upvote</button>
+  <p>49.6k</p>
+  <button>Downvote</button>
+</div>
+
+- Any idea, any clone, any whatever
+
+- Fornite => build the UI => 1
+- Facebook => the creators of react => 1
+- Seamless => 6
+- Reddit => 8
+
+npx create-react-app == rails new
+build out all our fiooder and depencies
+bundle install == npm install
+
 ### Vanilla JS
 
 Use historical context and the Mod 3 experience to frame the problem that React is meant to solve:
