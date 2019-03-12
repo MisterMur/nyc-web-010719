@@ -5,6 +5,10 @@ Events & State
 
 - [ ] Add event handlers to elements in React
 - [ ] Explain why we have Synthetic Events
+      - 1 there's that pooling
+      - API that is consistent across browsers
+      - that's a bug in the browser
+      - react-dom / react-native
 - [ ] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
 - [ ] Instantiate `state` inside and outside of the `constructor`
 - [ ] Create event handler callbacks that manipulate `state`
@@ -40,18 +44,41 @@ state
 - what comes from the server => titles, likes
 - how would you want this ideally structured?
 - json =>
-{
-  title: "some title",
-  likes: 2342,
-  comments: [
-    "hello",
-    "first",
-    "didn't get first"
-  ],
-  colored? orange, blue => the question i will leave hanging
-    boolean, null
-
-}
+[
+  {
+    title: "some title",
+    likes: 2342,
+    comments: [
+      "hello",
+      "first",
+      "didn't get first"
+    ],
+    colored? orange, blue => the question i will leave hanging
+      boolean, null
+  },
+  {
+    title: "some title",
+    likes: 2342,
+    comments: [
+      "hello",
+      "first",
+      "didn't get first"
+    ],
+    colored? orange, blue => the question i will leave hanging
+      boolean, null
+  },
+  {
+    title: "some title",
+    likes: 2342,
+    comments: [
+      "hello",
+      "first",
+      "didn't get first"
+    ],
+    colored? orange, blue => the question i will leave hanging
+      boolean, null
+  }
+]
 
 state => a condition, status, set of circumstances
 - state is a representation of the data that you see in the DOM

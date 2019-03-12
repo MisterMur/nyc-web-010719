@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 
-var votes = 0;
+// var votes = 0;
 
 // features of a class component is that it can have state
 // functional components cannot have state...
 class Post extends Component {
-  constructor(props) {
-    super(props)
-
-    // we only change likes
-    // state comes from somewhere => database
-    this.state = {
-      title: "Sugar is too fat.", // what would title initially render as? ""
-      likes: 11.2, // when we click a button
-      comments: [
-        "hello",
-        "first",
-        "didn't get first"
-      ],
-    } // should be an object
-
-    this.upvote = this.upvote.bind(this); // this as #2 method
-  }
+  // constructor(props) {
+  //   super(props)
+  //
+  //   // we only change likes
+  //   // state comes from somewhere => database
+  //   // this.state = {
+  //   //   title: "Sugar is too fat.", // what would title initially render as? ""
+  //   //   likes: 11.2, // when we click a button
+  //   //   comments: [
+  //   //     "hello",
+  //   //     "first",
+  //   //     "didn't get first"
+  //   //   ],
+  //   // } // should be an object
+  //
+  //   this.upvote = this.upvote.bind(this); // this as #2 method
+  // }
 
   // also not bound
   // this is a feature given to you by create-react-app + babel
@@ -56,15 +56,26 @@ class Post extends Component {
   }
   // }.bind()// let's not do that
 
+
+
+  // downvote = () => {
+  //   console.log("do some sort of upvote", this.state.likes);
+  //   this.setState({
+  //     likes: this.state.likes - 1,
+  //     new: "key"
+  //   })
+  // }
+
   // this is called on the instance
+  // javascript math - floating point math
   render() {
     console.log('Post', this.props, this.state);
 
     return (
       <div id="1" className="container" data-id="1">
-        <h2>{this.state.title.toUpperCase()}</h2>
-        <img src=""/>
-        <button> >Comments</button>
+        <h2>{this.props.title.toUpperCase()}</h2>
+        <img src="https://loremflickr.com/320/240/dog" alt="a dog" />
+        <button onClick={this.props.handleCommentButton}> >Comments</button>
         <button>Share</button>
         <button>Save</button>
         {/* <button onClick={this.upvote.bind(this)}>
@@ -76,8 +87,8 @@ class Post extends Component {
         <button onClick={this.upvote}>
           Upvote
         </button>
-        <p>{this.state.likes}</p>
-        <button>Downvote</button>
+        <p>{this.props.votes}</p>
+        <button onClick={this.props.downvote}>Downvote</button>
       </div>
     );
   }
