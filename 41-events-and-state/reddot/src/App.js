@@ -6,6 +6,7 @@ import './App.css';
 import PostBox from './PostBox';
 import Post from './Post';
 
+// first lesson, they don't go on Components
 class App extends Component {
   render() {
     return (
@@ -13,6 +14,7 @@ class App extends Component {
         <PostBox
           title="What video game sound effect can you still hear in your head?"
           votes={345435}
+          onClick={function() { console.log("clicked"); }}
         />
         <PostBox
           title="something else"

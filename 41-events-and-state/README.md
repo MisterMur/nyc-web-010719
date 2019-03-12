@@ -12,7 +12,50 @@ Events & State
 - [ ] Manipulate the DOM by changing values in `state` instead of using vanilla JS
 - [ ] Draw a component hierarchy and describe the Flow of Information
 
+**Stretch Goals**
+
+- [ ] Use Conditional Rendering to determine what to render based on `state`
+- [ ] Pass callbacks around using `props`
+
 ## Lecture Notes
+
+
+find the element = gone~!!!!
+
+add event listener => how to add an event handler
+callback function => gets the event object when fired
+  - but this event object is different
+persist, change something
+
+  giant if/else
+    event delegation, event bubbling = no more of this nonsense
+  => it has one giant event listner
+
+Voting
+- vote up
+- vote down
+
+state
+- props => show what should be dynamic?
+- what comes from the server => titles, likes
+- how would you want this ideally structured?
+- json =>
+{
+  title: "some title",
+  likes: 2342,
+  comments: [
+    "hello",
+    "first",
+    "didn't get first"
+  ],
+  colored? orange, blue => the question i will leave hanging
+    boolean, null
+
+}
+
+state => a condition, status, set of circumstances
+- state is a representation of the data that you see in the DOM
+- your UI is derived from your state
 
 ### Event Handlers
 
