@@ -3,20 +3,20 @@ State, Events, & Forms
 
 ## SWBAT
 
-- [ ] Write functional `setState` when required
-- [ ] Manipulate the DOM by changing values in `state` instead of using vanilla JS
-- [ ] Debug the `event` object we get in our event handler callbacks
-- [ ] Write controlled forms in React
-- [ ] Pass data up and down the component hierarchy with our callbacks (Inverse Data Flow)
+- [x] Write functional `setState` when required
+- [x] Manipulate the DOM by changing values in `state` instead of using vanilla JS
+- [x] Debug the `event` object we get in our event handler callbacks
+- [x] Write controlled forms in React
+- [x] Pass data up and down the component hierarchy with our callbacks (Inverse Data Flow)
 - [ ] Describe the VirtualDOM
-- [ ] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
-- [ ] Draw a component hierarchy and describe the Flow of Information with Inverse Data Flow
+- [x] Correctly choose when to use `props` vs `state`, and explain why one would use one or the other
+- [x] Draw a component hierarchy and describe the Flow of Information with Inverse Data Flow
 
 ## Deliverables
 
-- Refactor code for correctness.
-- Add a form to add new posts.
-- Add a preview feature to adding new posts.
+- [x] Refactor code for correctness.
+- [x] Add a form to add new posts.
+- [ ] Add a preview feature to adding new posts.
 
 ## Lecture Notes
 

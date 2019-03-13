@@ -3,6 +3,9 @@ import React from 'react';
 const Post = (props) => {
   // console.log('Post', props);
 
+  // don't go adding these anymore
+  // id={props.id}
+  // data-id
   return (
     <div className="post-container">
       <h2>{props.title.toUpperCase()}</h2>
@@ -10,11 +13,11 @@ const Post = (props) => {
       <button onClick={props.handleCommentButton}>Comments</button>
       <button>Share</button>
       <button>Save</button>
-      <button onClick={props.upvote}>
+      <button onClick={() => props.upvote(props.id)}>
         Upvote
       </button>
       <p>{props.votes}</p>
-      <button onClick={props.downvote}>Downvote</button>
+      <button onClick={() => props.downvote(props.id)}>Downvote</button>
     </div>
   );
 }
