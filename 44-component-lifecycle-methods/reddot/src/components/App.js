@@ -7,7 +7,7 @@ import Post from './Post';
 import PostThread from './PostThread';
 import PostForm from './PostForm';
 
-import database from '../apis/database.js';
+import { database } from '../apis/database.js';
 
 class App extends Component {
   state = {
@@ -91,7 +91,7 @@ class App extends Component {
         </header>
 
         <PostForm createPost={this.handleCreatePost} />
-        
+
         {
           this.state.page === 'home' ?
             this.renderPosts()
