@@ -4,8 +4,8 @@ Component Lifecycle Methods
 ## SWBATs
 
 - [ ] Write methods that interact with data at different points throughout a component's life
-- [ ] Explain why we `fetch` data using `ComponentDidMount`
-- [ ] Identify the most-used Lifecycle Methods
+- [ ] Explain why we `fetch` data using `componentDidMount`
+- [ ] Identify the most-used Lifecycle Methods and their common use cases
 
 ## Outline
 
