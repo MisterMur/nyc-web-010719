@@ -36,4 +36,4 @@ const database = [
   }
 ];
 
-export default database;
+export { id, database };

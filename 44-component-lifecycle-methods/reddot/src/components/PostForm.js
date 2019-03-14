@@ -7,9 +7,8 @@ class PostForm extends React.Component {
     url: "",
   }
 
-  // default of a form submits
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // default of a form submits
     console.log("it works", this.state.title);
 
     this.props.createPost(this.state.title, this.state.url);

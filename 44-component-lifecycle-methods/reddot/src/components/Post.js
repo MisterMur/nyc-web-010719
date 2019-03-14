@@ -3,9 +3,6 @@ import React from 'react';
 const Post = (props) => {
   // console.log('Post', props);
 
-  // don't go adding these anymore
-  // id={props.id}
-  // data-id
   return (
     <div className="post-container">
       <h2>{props.title.toUpperCase()}</h2>
