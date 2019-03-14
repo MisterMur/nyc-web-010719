@@ -11,7 +11,7 @@ class ReddotAdapter {
   }
 
   static getPosts() {
-    return this.requestSimulator(this.db.posts,  500);
+    return this.requestSimulator(this.db.posts, 0);
   }
 
   static addPost(body) {

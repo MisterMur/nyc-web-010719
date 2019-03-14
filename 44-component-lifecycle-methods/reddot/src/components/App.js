@@ -6,14 +6,50 @@ import '../assets/css/App.css';
 import Post from './Post';
 import PostThread from './PostThread';
 import PostForm from './PostForm';
+import PreviewPost from './PreviewPost';
 
-import { database } from '../apis/database.js';
+// import { database } from '../apis/database.js';
+import ReddotAdapter from '../apis/ReddotAdapter';
 
 class App extends Component {
   state = {
     page: 'home',
-    posts: database,
-    counter: 0,
+    posts: [], // real data, default your data to what you expect it to be
+    // counter: 0,
+    togglePreview: false,
+    title: "",
+    url: "",
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault(); // default of a form submits
+    console.log("it works", this.state.title);
+
+    this.handleCreatePost(this.state.title, this.state.url);
+
+    this.setState({
+      title: "",
+      url: "",
+    });
+  }
+
+  handleTitleChange = (event) => {
+    console.log('it works again', event.target.value);
+    this.setState({ title: event.target.value.toUpperCase() });
+  }
+
+  handleUrlChange = (event) => {
+    console.log('it works again', event.target.value);
+    this.setState({ url: event.target.value });
+  }
+
+  componentDidMount() {
+    ReddotAdapter.getPosts()
+      .then(res => res.json())
+      .then(posts => {
+        // this.setState({ posts: posts })
+        this.setState({ posts }) // nice shorthand trick
+      })
   }
 
   renderPosts() {
@@ -81,6 +117,13 @@ class App extends Component {
     });
   }
 
+  handlePreviewButton = () => {
+    console.log("wroite this correctly");
+    this.setState(prevState => {
+      return { togglePreview: !prevState.togglePreview }
+    })
+  }
+
   render() {
     console.log('App render', 'state', this.state);
 
@@ -90,7 +133,25 @@ class App extends Component {
           <button onClick={this.goToHome}>Home</button>
         </header>
 
-        <PostForm createPost={this.handleCreatePost} />
+        <PostForm
+          handleSubmit={this.handleSubmit}
+          handleTitleChange={this.handleTitleChange}
+          handleUrlChange={this.handleUrlChange}
+          title={this.state.title}
+          url={this.state.url}
+        />
+
+        <button onClick={this.handlePreviewButton}>Preview Post!</button>
+
+        { /* I want it up here - one big problem - lifting state */
+          this.state.togglePreview ?
+            <PreviewPost
+              title={this.state.title}
+              url={this.state.url}
+            />
+          :
+            null
+        }
 
         {
           this.state.page === 'home' ?
