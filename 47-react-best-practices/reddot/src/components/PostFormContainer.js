@@ -19,6 +19,7 @@ class PostFormContainer extends React.Component {
   }
 
   handleChange = (event) => {
+    // event.target.name == "title"
     this.setState({ [event.target.name]: event.target.value });
   }
 

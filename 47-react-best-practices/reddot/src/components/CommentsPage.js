@@ -12,9 +12,11 @@ class CommentsPage extends Component {
 
   componentDidMount() {
     // TODO: Consider using Promise.all here.
+    // debugger
     ReddotAdapter.getComments(this.props.postId)
-      .then(res => res.json())
+      .then(res => res.json()) // handle the error here
       .then(comments => this.setState({ comments }));
+      // .catch()
 
     ReddotAdapter.getPost(this.props.postId)
       .then(res => res.json())
@@ -56,13 +58,17 @@ class CommentsPage extends Component {
   }
 
   render() {
+    //. confuse future you
+    const { post: { title, src, likes, id } } = this.state; // how readable is it?
+    // const { post } = this.state;
+
     return (
       <Fragment>
-        <Post title={this.state.post.title} src={this.state.post.src}>
+        <Post title={title} src={src}>
           <PostAttributes
-            likes={this.state.post.likes}
-            likePost={() => this.likePost(this.state.post.id)}
-            dislikePost={() => this.dislikePost(this.state.post.id)}
+            likes={likes}
+            likePost={() => this.likePost(id)}
+            dislikePost={() => this.dislikePost(id)}
             goToComments={() => console.log("HACK: Already here. Don't go anywhere.")}
           />
         </Post>
@@ -71,5 +77,13 @@ class CommentsPage extends Component {
     );
   }
 }
+
+CommentsPage.defaultProps = {
+  postId: 0,
+  // func: () => {} // this thing if I clicked it won't crash
+}
+
+// start typing your props
+// prop-types
 
 export default CommentsPage;

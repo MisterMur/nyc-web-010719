@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PostFormContainer from './PostFormContainer';
 import Trending from './Trending';
 import PostList from './PostList';
@@ -11,9 +12,20 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    const that = this // playing with English
+    // debugger
+    // _this
+
     ReddotAdapter.getPosts()
       .then(res => res.json())
       .then(posts => {
+        // assume it's an object
+        // adding
+        const post = { title: "something", likes: 10 }
+        // let copyPosts = { title: "overwrite", ...post} // this is defaulting a key
+        // let copyPosts = { ...post, title: "overwrite"} // this is overwrite the orginal key
+        // let copyPosts = { ...post, addNew: "key"} // this is overwrite the orginal key
+        // { title: "default", ...post, title: "overwrite"} // very useless but interesting trivia
         this.setState({ posts });
       });
   }

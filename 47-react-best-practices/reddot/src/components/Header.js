@@ -3,10 +3,11 @@ import React from 'react';
 import NavBar from './NavBar';
 import Search from './Search';
 
-const Header = (props) => {
+// destructuring
+const Header = ({ goToHomePage = "some value" }) => {
   return (
     <header className="border">
-      <NavBar handleLogoClick={props.goToHomePage}/>
+      <NavBar handleLogoClick={goToHomePage}/>
       <Search />
     </header>
   );
