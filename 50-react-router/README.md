@@ -10,6 +10,9 @@ React Router
 - [ ] Create dynamic routes and use `params`
 - [ ] Make the distinction between `state` being one _Single Source of Truth_ and `react-router` being another _Single Source of Truth_
 
+SPA => give it its own routes
+these routes have 0 relation to the backend
+
 ## Outline
 
 - Static vs Dynamic Routing

@@ -91,3 +91,8 @@ h1 {
   font-size: 3em;
   font-style: italic;
 }
+
+.selected {
+  font-size: 3em;
+  color: orange;
+}

@@ -12,11 +12,12 @@ class CommentsPage extends Component {
 
   componentDidMount() {
     // TODO: Consider using Promise.all here.
-    ReddotAdapter.getComments(this.props.postId)
+    // it's a string... I forgot...
+    ReddotAdapter.getComments(parseInt(this.props.match.params.id))
       .then(res => res.json())
       .then(comments => this.setState({ comments }));
 
-    ReddotAdapter.getPost(this.props.postId)
+    ReddotAdapter.getPost(parseInt(this.props.match.params.id))
       .then(res => res.json())
       .then(post => this.setState({ post }));
   }
@@ -55,6 +56,19 @@ class CommentsPage extends Component {
       });
   }
 
+  handleClick = (event) => {
+    // react uses webpack to transform, // _this
+
+    // we also lose context here in an event
+    let that = this;
+    // debugger
+
+    //. you want to do logic before changing routes
+    // login, .then()
+    // logout
+    this.props.history.push("/")
+  }
+
   render() {
     return (
       <Fragment>
@@ -67,6 +81,7 @@ class CommentsPage extends Component {
           />
         </Post>
         <CommentList comments={this.state.comments} />
+        <button onClick={this.handleClick}>Example</button>
       </Fragment>
     );
   }

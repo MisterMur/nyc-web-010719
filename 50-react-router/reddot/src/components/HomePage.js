@@ -6,8 +6,14 @@ import PostList from './PostList';
 import ReddotAdapter from '../apis/ReddotAdapter';
 
 class HomePage extends React.Component {
-  state = {
-    posts: [],
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      posts: [],
+    }
+
+    console.log("homepage constructor", this.props);
   }
 
   componentDidMount() {
