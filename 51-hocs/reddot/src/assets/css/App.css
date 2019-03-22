@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+input {
+  margin: 0 1em;
+}
+
+content {
+  display: block;
+  width: 80%;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-container, .profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.vote-container, .link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.vote-container p {
+  font-weight: 500;
+  margin: 0 1em;
+}
+
+.link-container * {
+  margin: 0 1em;
+}
+
+.thread-container {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px dashed orange;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-preview-container {
+  padding: 1em;
+  border: 2px solid orange;
+}
+
+.search-form, .nav-container, .login-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0 1em;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+.not-found-container h1 {
+  font-size: 3em;
+  font-style: italic;
+}
+
+.selected {
+  font-size: 3em;
+  color: orange;
+}
+
+.profile-card img {
+  width: 400px;
+  border: 1em solid grey;
+}
