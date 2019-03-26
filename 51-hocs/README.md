@@ -6,8 +6,9 @@ React Higher Order Component (HOC)
 - Why? Some background:
   - Factory Pattern
   - Composition vs Inheritance
-- Higher Order Functions
-- Higher Order Components
+- Higher Order Functions => function that returns or accepts a function
+- Higher Order Components => function returns and accepts another component
+  - HOC vs render props
 - withRouter
 - withLoading
 - withAd

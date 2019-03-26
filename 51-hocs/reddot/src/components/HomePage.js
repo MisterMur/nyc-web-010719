@@ -5,18 +5,20 @@ import PostList from './PostList';
 
 import ReddotAdapter from '../apis/ReddotAdapter';
 
+import withLoading from '../hocs/withLoading';
+
 class HomePage extends React.Component {
   state = {
-    posts: [],
+    posts: this.props.initialData,
   }
 
-  componentDidMount() {
-    ReddotAdapter.getPosts()
-      .then(res => res.json())
-      .then(posts => {
-        this.setState({ posts });
-      });
-  }
+  // componentDidMount() {
+  //   ReddotAdapter.getPosts()
+  //     .then(res => res.json())
+  //     .then(posts => {
+  //       this.setState({ posts });
+  //     });
+  // }
 
   addPost = (title, src) => {
     ReddotAdapter.addPost(title, src)
@@ -77,4 +79,10 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default withLoading(HomePage, ReddotAdapter.getPosts());
+
+//   ReddotAdapter.getPosts()
+//     .then(res => res.json())
+//     .then(posts => {
+//       this.setState({ posts });
+//     });

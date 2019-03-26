@@ -9,6 +9,11 @@ import CommentsPage from './CommentsPage';
 import NotFound from './NotFound';
 import ProfilePage from './ProfilePage';
 
+import withColor from '../hocs/withColor';
+
+// making a new component and putting it in a variable
+const NewNotFound = withColor(NotFound);
+
 const App = (props) => (
   <Fragment>
     <Header />
@@ -17,7 +22,7 @@ const App = (props) => (
       <Route path="/profile" component={ProfilePage} />
       <Route path="/posts/:id/comments" component={CommentsPage} />
       <Route path="/" exact component={HomePage} />
-      <Route component={NotFound}/>
+      <Route component={withColor(NotFound)}/>
     </Switch>
   </Fragment>
 );

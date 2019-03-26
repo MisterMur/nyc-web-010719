@@ -1,9 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 const Logout = (props) => {
   const handleLogout = (event) => {
     localStorage.removeItem('fake_session');
     // go somewhere?
+    console.log('Logout', props);
+    props.history.push("/");
   }
 
   return (
@@ -11,4 +14,4 @@ const Logout = (props) => {
   );
 }
 
-export default Logout;
+export default withRouter(Logout);

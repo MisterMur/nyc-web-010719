@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ReddotAdapter from '../apis/ReddotAdapter';
+import withLoading from '../hocs/withLoading';
 
 class ProfilePage extends Component {
   state = {

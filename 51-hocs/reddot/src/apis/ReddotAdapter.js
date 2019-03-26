@@ -11,7 +11,12 @@ class ReddotAdapter {
   }
 
   static getPosts() {
-    return this.requestSimulator([...this.db.posts], 0);
+    // return fetch('soime url/posts')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     return //structured version of your data
+    //   })
+    return this.requestSimulator([...this.db.posts], 1000);
   }
 
   static getPost(postId) {
