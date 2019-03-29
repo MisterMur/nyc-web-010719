@@ -16,7 +16,41 @@ Intro to Redux
 - [ ] Make the `store` available to their application by using the `Provider` component.
 - [ ] Use `connect` to give components the ability to listen for changes to the `store`.
 - [ ] Use `dispatch` in a React component.
-- [ ] Use `mapDispatchToProps` to read data from the `state` in the Redux `store`.
+- [ ] Use `mapStateToProps` to read data from the `state` in the Redux `store`.
+
+
+when you use redux well
+a lot of your components turn functional
+- local State
+- componet lifecycle methods
+
+everything you learn is a solution to a problem
+what we do, i give you just enough to hit a wall
+no
+because someone else explored that route
+failed
+we need to invent/create a solution
+abstraction / layers / APIs
+
+redux
+add a new layer(s)
+
+request => dispatch(action)
+Controller + Router: reducer
+Model: store => global state
+View: response => connect(mapStateToProps)()
+                          Serializer
+
+the difference between redux feeling painful and feeling good
+is how well you can think in just that layer
+
+very similar to chats - once you are subscribed (join) a channel
+if anyone "dispatches" (types and sends), everyone else receives those messages
+
+
+your job is to write every layer
+
+
 
 ## Objectives
 
