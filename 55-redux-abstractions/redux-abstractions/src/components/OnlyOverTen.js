@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 const OnlyOverTen = (props) => {
   if (props.renderMe) {
-    return <p style={{ color: 'orange' }}>{props.counter}</p>
+    return <p style={{ color: 'orange' }}>{props.chicken}</p>
   } else {
     return null;
   }
@@ -11,7 +11,7 @@ const OnlyOverTen = (props) => {
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter,
+    chicken: state.counter,
     renderMe: state.counter > 10,
   }
 }

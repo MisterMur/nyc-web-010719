@@ -1,5 +1,9 @@
-Intro to Redux
-==============
+Reduxions
+=========
+
+DISCLAIMER!!!
+something you don't need to do
+don't try and force it
 
 ## SWBATs
 

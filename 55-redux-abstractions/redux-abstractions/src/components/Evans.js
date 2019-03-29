@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Evens = (props) => {
+const Evans = (props) => {
   const style = {
     color: props.isEven ? 'green' : 'red'
   }
@@ -16,4 +16,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Evens);
+export default connect(mapStateToProps)(Evans);
