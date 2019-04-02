@@ -3,10 +3,13 @@ Redux combineReducers & Thunk
 
 ## Outline
 
-- [ ] multiple reducers
+- [x] multiple reducers
 - [ ] async redux
 - [ ] redux thunk
 - [ ] middleware
+
+reducers => change state in a controlled way..........
+types => what route, what to change
 
 ## SWBAT
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const UserStats = ({ users }) => {
+const UserStats = (props) => {
+  const { users } = props;
+  console.log(props, users);
   const total = users.length;
   const cats = users.filter(user => user.animalPreference === 'cats').length;
   const dogs = users.filter(user => user.animalPreference === 'dogs').length;
@@ -27,8 +29,9 @@ const UserStats = ({ users }) => {
 }
 
 function mapStateToProps(state) {
+  console.log('where did our state go>>?>>>', state);
   return {
-    users: state.users
+    users: state.user.users
   }
 }
 

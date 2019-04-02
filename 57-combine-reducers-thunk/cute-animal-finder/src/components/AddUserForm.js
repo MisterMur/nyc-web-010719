@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addUser } from '../actions';
 
 class AddUserForm extends Component {
+  // this doesn't matter anywhere else
   state = {
     name: "",
     email: "",
